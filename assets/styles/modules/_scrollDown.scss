@@ -1,0 +1,46 @@
+.scrollDown{
+	position:absolute;
+	right:50px;
+	bottom:50px;
+	height:50px;
+}
+
+/* Scrollテキストの描写 */
+.scrollDown span{
+	position: absolute;
+	left:-15px;
+	top: -15px;
+	color: #eee;
+	font-size: 0.7rem;
+	letter-spacing: 0.05em;
+}
+
+/* 線の描写 */
+.scrollDown::after{
+	content: "";
+	position: absolute;
+	top: 0;
+	width: 1px;
+	height: 30px;
+	background: #eee;
+	animation: pathmove 1.4s ease-in-out infinite;
+	opacity:0;
+}
+
+/* 線が上から下に動くアニメーション */
+@keyframes pathmove{
+	0%{
+		height:0;
+		top:0;
+		opacity: 0;
+	}
+	30%{
+		height:30px;
+		opacity: 1;
+	}
+	100%{
+		height:0;
+		top:50px;
+		opacity: 0;
+	}
+}

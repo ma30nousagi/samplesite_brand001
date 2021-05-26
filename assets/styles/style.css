@@ -491,7 +491,7 @@ body.appear .splashbg {
   left: 0;
   -webkit-transform: scaleY(0);
           transform: scaleY(0);
-  background-color: #eb6100;
+  background-color: #504237;
   /*伸びる背景色の設定*/
   -webkit-animation-name: PageAnime;
           animation-name: PageAnime;
@@ -554,13 +554,13 @@ body.appear .splashbg {
 }
 
 /*画面遷移の後現れるコンテンツ設定*/
-#wrapper {
+.container {
   opacity: 0;
   /*はじめは透過0に*/
 }
 
 /*bodyにappearクラスがついたら出現*/
-body.appear #wrapper {
+body.appear .container {
   -webkit-animation-name: PageAnimeAppear;
           animation-name: PageAnimeAppear;
   -webkit-animation-duration: 1s;
@@ -587,6 +587,70 @@ body.appear #wrapper {
   }
   100% {
     opacity: 1;
+  }
+}
+
+.scrollDown {
+  position: absolute;
+  right: 50px;
+  bottom: 50px;
+  height: 50px;
+}
+
+/* Scrollテキストの描写 */
+.scrollDown span {
+  position: absolute;
+  left: -15px;
+  top: -15px;
+  color: #eee;
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+}
+
+/* 線の描写 */
+.scrollDown::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 1px;
+  height: 30px;
+  background: #eee;
+  -webkit-animation: pathmove 1.4s ease-in-out infinite;
+          animation: pathmove 1.4s ease-in-out infinite;
+  opacity: 0;
+}
+
+/* 線が上から下に動くアニメーション */
+@-webkit-keyframes pathmove {
+  0% {
+    height: 0;
+    top: 0;
+    opacity: 0;
+  }
+  30% {
+    height: 30px;
+    opacity: 1;
+  }
+  100% {
+    height: 0;
+    top: 50px;
+    opacity: 0;
+  }
+}
+@keyframes pathmove {
+  0% {
+    height: 0;
+    top: 0;
+    opacity: 0;
+  }
+  30% {
+    height: 30px;
+    opacity: 1;
+  }
+  100% {
+    height: 0;
+    top: 50px;
+    opacity: 0;
   }
 }
 
