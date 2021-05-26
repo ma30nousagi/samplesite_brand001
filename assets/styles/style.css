@@ -713,6 +713,15 @@ body.appear .container {
   font-weight: bold;
 }
 
+.particle {
+  position: absolute;
+  /*描画固定*/
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+}
+
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
@@ -790,4 +799,151 @@ figure {
 /*------------------------------
 	8.0 共通設定
 ------------------------------*/
+/*全体のエリア設定*/
+.ms-section {
+  color: #fff;
+  padding: 20px;
+}
+
+.ms-section a {
+  color: #fff;
+}
+
+/*右にある丸ナビゲーション色*/
+#multiscroll-nav span {
+  background: transparent !important;
+  border-color: #fff !important;
+}
+
+/*右にある丸のナビゲーション現在地色*/
+#multiscroll-nav li .active span {
+  background: #fff !important;
+}
+
+/*左上のナビゲーション*/
+#menu li {
+  display: inline-block;
+}
+
+#menu li a {
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+  padding: 20px;
+}
+
+/*左エリア画像設定*/
+#left1 {
+  background: url("../img/main-left.jpg") no-repeat center right;
+  background-size: cover;
+}
+
+#right1 {
+  background: url("../img/main-right.jpg") no-repeat center left;
+  background-size: cover;
+}
+
+#right2 {
+  background: url("../img/01.jpg") no-repeat center;
+  background-size: cover;
+}
+
+#right3 {
+  background: url("../img/02.jpg") no-repeat center;
+  background-size: cover;
+}
+
+#right4 {
+  background: url("../img/03.jpg") no-repeat center;
+  background-size: cover;
+}
+
+#left4 {
+  background: url("../img/04.jpg") no-repeat center;
+  background-size: cover;
+}
+
+#right5 {
+  background: url("../img/05.jpg") no-repeat center;
+  background-size: cover;
+}
+
+#left5 {
+  background: url("../img/06.jpg") no-repeat center;
+  background-size: cover;
+}
+
+#right6 {
+  background: url("../img/07.jpg") no-repeat center;
+  background-size: cover;
+}
+
+/*＝＝＝＝＝＝＝＝＝＝＝550px以下の見え方＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+@media screen and (max-width: 550px) {
+  #header {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  /*全体のボックスについている余白をリセット*/
+  .ms-section {
+    padding: 0;
+  }
+  /*天地中央になっている見せ方を上ぞろえに上書き*/
+  .ms-tableCell {
+    vertical-align: top;
+  }
+  /*左上ナビゲーションと左エリア非表示*/
+  #menu,
+  .ms-right {
+    display: none;
+  }
+  /*右エリアを横幅100%にして画像＋テキストを出す設定*/
+  .ms-left {
+    width: 100% !important;
+  }
+  /*右エリア上部画像設定*/
+  #left1 {
+    background: url("/assets/images/main-right.jpg") center;
+    background-size: cover;
+  }
+  #left2 .sp__top {
+    background: url("/assets/images/fashion-001.jpg") no-repeat center;
+    background-size: cover;
+    height: 50vh;
+  }
+  #left3 .sp__top {
+    background: url("/assets/images/fashion-002.jpg") no-repeat top center;
+    background-size: cover;
+    height: 50vh;
+  }
+  #left4 .sp__top {
+    background: url("/assets/images/fashion-003.jpg") no-repeat top center;
+    background-size: cover;
+    height: 50vh;
+  }
+  #left4 .sp__bottom {
+    background: url("/assets/images/fashion-004.jpg") no-repeat top center;
+    background-size: cover;
+    height: 50vh;
+  }
+  #left5 .sp-top {
+    background: url("/assets/images/fashion-005.jpg") no-repeat top center;
+    background-size: cover;
+    height: 50vh;
+  }
+  #left5 .sp-bottom {
+    background: url("/assets/images/fashion-006.jpg") no-repeat center;
+    background-size: cover;
+    height: 50vh;
+  }
+  #left6 {
+    background: url("/assets/images/fashion-001.jpg") no-repeat center;
+    background-size: cover;
+  }
+  /*右エリア下部テキスト余白設定*/
+  .sp-bottom {
+    padding: 20px;
+  }
+}
 /*# sourceMappingURL=style.css.map */
