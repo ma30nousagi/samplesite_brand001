@@ -1,0 +1,59 @@
+.openbtn {
+    position: fixed;
+    cursor: pointer;
+    top: 10px;
+    right: -20px;
+    width: 100px;
+    height: 50px;
+    padding: 2px;
+    border-radius: 5px;
+    z-index: 1000;
+    & >span {
+        position: absolute;
+        display: inline-block;
+        transition: all .4s;
+        left: 14px;
+        height: 3px;
+        border-radius: 2px;
+        background: $cBlue;
+        
+        
+    }
+    // & >span:nth-of-type(1),span:nth-of-type(3) {
+    //     height: 2px;
+    //     background: #fff;
+    //     width: 35px;
+    //     left: 10px;
+    // }
+    & >span:nth-of-type(1) {
+        top: 15px;
+        width: 40%;
+    }
+    & >span:nth-of-type(2) {
+        top: 23px;
+        width: 30%;
+    }
+    & >span:nth-of-type(3) {
+        top: 31px;
+        width: 20%;
+    }
+}
+.openbtn.active {
+    & >span:nth-of-type(1) {
+        top: 18px;
+        left: 18px;
+        transform: translateY(6px) rotate(-135deg);
+        width: 30%;
+    }
+    & >span:nth-of-type(2) {
+        opacity: 0;
+    }
+    & >span:nth-of-type(3) {
+        top: 30px;
+        left: 18px;
+        transform: translateY(-6px) rotate(135deg);
+        width: 30%;
+    }
+}
+/* ナビゲーションの表示 */
+

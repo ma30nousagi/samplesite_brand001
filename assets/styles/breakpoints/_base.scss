@@ -1,0 +1,70 @@
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+1.0  Reset
+2.0  Document
+3.0  Layout
+4.0  Structure
+5.0  Contents
+6.0  Elements
+7.0  Widgets
+8.0  Sections
+9.0  External Plugins
+
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+1.0 Reset
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+2.0 Document Setup
+--------------------------------------------------------------*/
+/*------------------------------
+	2.1 Typography
+------------------------------*/
+html {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    font-size: 62.5%;
+    line-height: 1.6;
+}
+body {
+    font-family:"游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", "メイリオ", sans-serif;
+    font-family: "Font Awesome 5 Free","Font Awesome 5 Brands",'Noto Sans JP', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', sans-serif;
+    font-size: 14px;
+    font-size: 1.4rem;
+    color: $cTitle;
+    font-feature-settings: "palt";//字間を詰める 
+    letter-spacing: 2px;
+    -webkit-text-size-adjust: none; 
+}
+h1 {
+    margin: 0;
+}
+h2 {
+    font-family: 'Roboto', sans-serif;
+}
+ul, ol, li {
+    padding-left: 0;
+    list-style: none;
+}
+ul {
+    margin-bottom: 0;
+}
+a {
+    color: $cBlack;
+	text-decoration: none;
+    outline: none;
+}
+img {
+    max-width: 100%;
+    vertical-align: bottom;
+}
+
+figure {
+    margin: 0;
+}
+
+/*------------------------------
+	8.0 共通設定
+------------------------------*/

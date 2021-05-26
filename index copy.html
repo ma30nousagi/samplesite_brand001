@@ -1,0 +1,367 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>SocketWEB</title>
+<meta name="description"  content="ブランドサイトのサンプルWebサイトです。">
+<meta name="keywords"  content="">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<!-- ニュースティッカー -->
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.css">
+<!-- CSS -->
+<link rel="stylesheet" href="/assets/styles/style.css">
+<!-- animate CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" integrity="sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+I/lqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw==" crossorigin="anonymous" />
+<!-- favicon -->
+<!-- <link rel="shortcut icon" href="/assets/images/m_favicon.ico"> -->
+<!-- normalize CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" />
+<!-- font awesome CSS -->
+<link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+<!-- google font -->
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600;700&family=Noto+Sans+JP&family=Varela+Round&family=Yusei+Magic&display=swap" rel="stylesheet" />
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+<!-- swiper css -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.5.4/swiper-bundle.min.css" integrity="sha512-Uny/q0WcgHTmPEwEnudIstSn9ITJ5A4M69WwQ8kii9QmCKfIgwLZQjEo7W0O4yZpamS29cJP0LGrPqFBEzINIw==" crossorigin="anonymous" />
+<!-- jQuery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+</head>
+
+<body>
+<div id="splash">
+<div id="splash-logo"><div class="bgextend bgLRextend"><span class="bgappear"><img src="assets/images/logo/socketwebnet_logo.png" alt="socketwebのロゴ"></span></div></div>
+<!--/splash--></div>
+<div class="splashbg"></div><!---画面遷移用-->
+
+<div id="wrapper" class="wrapper">
+<header id="header" class="header">
+<h1><a href="#"><span class="bgextend bgLRextendTrigger"><span class="bgappearTrigger"><img src="assets/images/logo/socketwebnet_logo.png" class="header__img" alt="socketwebのロゴ"></span></span></a></h1>
+    
+<nav id="pc-nav" class="pc-nav">
+        <ul>
+            <li><a href="#"><span class="bgextend bgLRextendTrigger"><span class="bgappearTrigger">企業理念</span></span></a></li>
+            <li><a href="#"><span class="bgextend bgLRextendTrigger"><span class="bgappearTrigger">事業内容</span></span></a></li>
+            <li><a href="#"><span class="bgextend bgLRextendTrigger"><span class="bgappearTrigger">会社概要</span></span></a></li>
+            <li><a href="#"><span class="bgextend bgLRextendTrigger"><span class="bgappearTrigger">お問い合わせ</span></span></a></li>
+        </ul>
+</nav>
+
+<div class="openbtn"><span></span><span></span><span></span></div>
+<div id="g-nav" class="g-nav">
+    <div id="g-nav-list" class="g-nav-list">
+            <ul>
+                <li><a href="#vision">企業理念</a></li>
+                <li><a href="#service">事業内容</a></li>
+                <li><a href="#about">会社概要</a></li>
+                <li><a href="#contact">お問い合わせ</a></li>
+                <li><a href="">TEL : 03-1234-5678</a></li>
+            </ul>
+    </div>
+</div>
+
+</header>
+<div id="top-main" class="top-main">
+<p class="top-lead">
+    <span class="bgextend bgLRextendTrigger">
+        <span class="bgappearTrigger">SIMPLE</span>
+    </span>
+    <br>
+    <span class="bgextend bgLRextendTrigger">
+        <span class="bgappearTrigger">Organization</span>
+    </span>
+    <br>
+    <span class="bgextend bgLRextendTrigger">
+        <span class="bgappearTrigger">of class</span>
+    </span>
+    <br>
+    <span class="bgextend bgLRextendTrigger">
+        <span class="bgappearTrigger">Endless Transfer</span>
+    </span>
+</p>
+<!--/top-main--></div>
+
+<div id="container" class="container">
+
+<main id="main-area" class="main-area">
+<section id="topics" class="topics">
+    <h2><span class="bgextend bgLRextendTrigger"><span class="bgappearTrigger">お知らせ</span></span></h2>
+    <ul class="slider">
+    <li><a href="#"><time datetime="2021-04-03">2021.04.03</time>新サービス「LoveFire」の発売について</a></li>
+    <li><a href="#"><time datetime="2021-04-02">2021.04.02</time>GW期間の営業について</a></li>
+    <li><a href="#"><time datetime="2021-04-01">2021.04.01</time>採用情報を更新しました</a></li>
+    </ul>
+</section>
+
+<section id="vision" class="vision scroll-point">
+        <div class="img flipLeftTrigger fadeUpTrigger"></div>
+        <div class="content flipLeftTrigger">
+        <h2><span class="bgextend bgLRextendTrigger"><span class="bgappearTrigger">企業理念</span></span></h2>
+        <p class="vision-lead"><span class="bgextend bgLRextendTrigger"><span class="bgappearTrigger">あったらいいなを実現できる<br>顧客満足度の高い企業であり続けます</span></span></p>
+
+        <p>SocketWEBは、<br>Web制作から<br>システム開発まで</p>
+        <p>さらにはITプロフェッショナルの育成にも<br>力を入れています</p>
+        </div>
+</section>
+    
+<section id="service" class="service scroll-point">
+    <h2 class="heading" data-en="Service"><span class="bgextend bgLRextendTrigger"><span class="bgappearTrigger">事業内容</span></span></h2>
+    <section class="service-area">
+        <figure class="img flipLeftTrigger"><img src="/assets/images/markting-img.png" alt=""></figure>
+        <div class="content flipLeftTrigger">
+            <div class="content-area">
+            <h3><span>Marketing</span>マーケティング事業</h3>
+            <p>デジタルコンテンツからWebに至るまでこれまでに培ってきたノウハウを駆使してマーケティングを行います。</p>
+            <div class="btn"><a href="#" class="btnlinestretches3"><span>事業詳細</span></a></div>
+            </div>
+        </div>
+    </section>
+ 
+    <section class="service-area">
+        <figure class="img flipLeftTrigger"><img src="/assets/images/develop-img.png" alt=""></figure>
+        <div class="content flipLeftTrigger">
+            <div class="content-area">
+            <h3><span>Development</span>システム開発事業</h3>
+            <p>小規模から大規模までプロジェクト単位でご対応いたします。</p>
+            <div class="btn"><a href="#" class="btnlinestretches3"><span>システム開発詳細</span></a></div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="service-area">
+        <figure class="img flipLeftTrigger"><img src="/assets/images/education-img.png" alt=""></figure>
+        <div class="content flipLeftTrigger">
+            <div class="content-area">
+            <h3><span>Education</span>人材育成</h3>
+            <p>エンジニアやデザイナーの養成、IT人材の新人研修・プログラミング研修など社内・社外で積極的に行っています。</p>
+            <div class="btn"><a href="#" class="btnlinestretches3"><span>詳細ページ</span></a></div>
+            </div>
+        </div>
+    </section>
+    
+</section>
+    
+<section id="about" class="about scroll-point">
+    <h2 class="heading" data-en="About">
+        <span class="bgextend bgLRextendTrigger">
+            <span class="bgappearTrigger">会社概要</span>
+        </span>
+    </h2>
+    <ul class="about__list fadeUpTrigger">
+        <li>
+            <section class="fadeInTrigger">
+                <a href="">
+                    <figure class="circle">
+                        <span class="mask">
+                            <img src="/assets/images/ceo-img.png" alt="">
+                        </span>
+                    </figure>
+                    <div class="about__list-area">
+                        <h3>代表メッセージ</h3>
+                        <p>当社代表からSocketwebの<br>今後について</p>
+                        <div class="btn"><a href="#" class="btnlinestretches3"><span>詳細ページ</span></a></div>
+                    </div>
+                </a>
+            </section>
+        </li>
+        <li>
+            <section class="fadeInTrigger">
+                <a href="">
+                    <figure class="circle">
+                        <span class="mask">
+                            <img src="/assets/images/company-img.png" alt="">
+                        </span>
+                    </figure>
+                    <div class="about__list-area">
+                        <h3>会社情報</h3>
+                        <p>SocketWEBの会社概要</p>
+                        <div class="btn"><a href="#" class="btnlinestretches3"><span>詳細ページ</span></a></div>
+                    </div>
+                </a>
+            </section>
+        </li>
+    </ul>
+    
+</section>
+    
+<div class="fadeUpTrigger"><div class="contact-bg"></div></div>
+    
+<section id="contact" class="contact scroll-point">
+    <h2 class="heading" data-en="Contact">
+        <span class="bgextend bgLRextendTrigger">
+            <span class="bgappearTrigger">お問い合わせ</span>
+        </span>
+    </h2>
+    <div class="contact__card">
+        <section class="fadeInTrigger">
+        
+            <div class="contact__area">
+                <!-- <h3>お問い合わせ</h3> -->
+                <p>製品に関するご質問や取材のご依頼<br>製品掲載に関することなどお気軽にご連絡ください。</p>
+                <div class="btn"><a href="#" class="btnlinestretches3"><span>お問い合わせフォーム</span></a></div>
+            </div>
+
+        </section>
+    </div>
+    
+</section>
+</main>
+<!--/container--></div>	
+
+<footer id="footer" class="footer">
+    <p class="footer__logo"><img src="assets/images/logo/socketwebnet_logo.png" alt=""></p>
+    <ul class="footer__accordion">
+        <li class="c-footer-col">
+            <h3 class="c-footer-heading">
+                <a href="#">ホーム</a>
+            </h3>    
+        </li><!-- c-footer-col -->
+        <li class="c-footer-col">
+            <section>
+                <h3 class="c-footer-heading">
+                    企業理念
+                </h3>
+                <div class="box">
+                    <p class="c-footer-item"><a href="">企業理念</a></p>
+                    <p class="c-footer-item"><a href="">当社の強み</a></p>
+                    <p class="c-footer-item"><a href="">社是</a></p>
+                    <p class="c-footer-item"><a href="">経営理念</a></p>
+                </div>
+            </section>
+        </li><!-- c-footer-col -->
+        <li class="c-footer-col">
+            <section>
+                <h3 class="c-footer-heading">
+                    事業内容
+                </h3>
+                <div class="box">
+                    <p class="c-footer-item"><a href="">事業部の紹介</a></p>
+                    <p class="c-footer-item"><a href="">事業の強み</a></p>
+                    <p class="c-footer-item"><a href="">マーケティング事業</a></p>
+                    <p class="c-footer-item"><a href="">システム開発事業</a></p>
+                    <p class="c-footer-item"><a href="">人材開発事業</a></p>
+                </div>
+            </section>
+        </li><!-- c-footer-col -->
+        <li class="c-footer-col">
+            <section>
+                <h3 class="c-footer-heading">
+                    会社概要
+                </h3>
+                <div class="box">
+                    <p class="c-footer-item"><a href="">代表メッセージ</a></p>
+                    <p class="c-footer-item"><a href="">会社概要</a></p>
+                    <p class="c-footer-item"><a href="">沿革</a></p>
+                    <p class="c-footer-item"><a href="">アクセス</a></p>
+                    <p class="c-footer-item"><a href="">会社風景</a></p>
+                </div>
+            </section>
+        </li><!-- c-footer-col -->
+        <li class="c-footer-col">
+            <h3 class="c-footer-heading none">
+                <a href="">お問い合わせ</a>
+            </h3>    
+        </li><!-- c-footer-col -->
+    </ul>
+    <!-- footer-pc -->
+    <ul class="footer__pc">
+        <li class="c-footer-col">
+            <h3 class="c-footer-head">
+                <a href="#">ホーム</a>
+            </h3>    
+        </li><!-- c-footer-col -->
+        <li class="c-footer-col">
+            <section>
+                <h3 class="c-footer-head">
+                    企業理念
+                </h3>
+                <div class="box">
+                    <p class="c-footer-item"><a href="">企業理念</a></p>
+                    <p class="c-footer-item"><a href="">当社の強み</a></p>
+                    <p class="c-footer-item"><a href="">社是</a></p>
+                    <p class="c-footer-item"><a href="">経営理念</a></p>
+                </div>
+            </section>
+        </li><!-- c-footer-col -->
+        <li class="c-footer-col">
+            <section>
+                <h3 class="c-footer-head">
+                    事業内容
+                </h3>
+                <div class="box">
+                    <p class="c-footer-item"><a href="">事業部の紹介</a></p>
+                    <p class="c-footer-item"><a href="">事業の強み</a></p>
+                    <p class="c-footer-item"><a href="">マーケティング事業</a></p>
+                    <p class="c-footer-item"><a href="">システム開発事業</a></p>
+                    <p class="c-footer-item"><a href="">人材開発事業</a></p>
+                </div>
+            </section>
+        </li><!-- c-footer-col -->
+        <li class="c-footer-col">
+            <section>
+                <h3 class="c-footer-head">
+                    会社概要
+                </h3>
+                <div class="box">
+                    <p class="c-footer-item"><a href="">代表メッセージ</a></p>
+                    <p class="c-footer-item"><a href="">会社概要</a></p>
+                    <p class="c-footer-item"><a href="">沿革</a></p>
+                    <p class="c-footer-item"><a href="">アクセス</a></p>
+                    <p class="c-footer-item"><a href="">会社風景</a></p>
+                </div>
+            </section>
+        </li><!-- c-footer-col -->
+        <li class="c-footer-col">
+            <h3 class="c-footer-head">
+                <a href="">お問い合わせ</a>
+            </h3>    
+        </li><!-- c-footer-col -->
+    </ul>
+    <div class="footer__sns">
+        <div class="footer__sns-title">Follow us</div>
+        <ul class="footer__sns-list">
+            <li class="footer__sns-item">
+                <a href="" class="footer__sns-link">
+                    <i class="fab fa-twitter"></i>
+                </a>
+            </li>
+            <li class="footer__sns-item">
+                <a href="" class="footer__sns-link">
+                    <i class="fab fa-line"></i>
+                </a>
+            </li>
+            <li class="footer__sns-item">
+                <a href="" class="footer__sns-link">
+                    <i class="fab fa-youtube"></i>
+                </a>
+            </li>
+            <li class="footer__sns-item">
+                <a href="" class="footer__sns-link">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+            </li>
+            <li class="footer__sns-item">
+                <a href="" class="footer__sns-link">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+    
+    <small>&copy; 2021 SocketWEB ALL RIGHTS RESERVED</small>
+	<p id="page-top" class="page-top"><a href="#">Top</a></p>	
+</footer>
+<!--/wrapper--></div>
+   
+<!--=============JS ===============--> 
+<!-- ニュースティッカー -->   
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.js"></script>
+<!-- scrollgress -->  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/scrollgress/2.0.0/scrollgress.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.5.4/swiper-bundle.min.js" integrity="sha512-hQQhpacNvYwkN+PyMQghLPCql/6OQfWNKVUkpW0KgCB5XjqtIkxm8UYny+gTjvIfvE/CrqrKEUOLotbHBFs/0Q==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js" integrity="sha512-Eak/29OTpb36LLo2r47IpVzPBLXnAMPAVypbSZiZ4Qkf8p/7S/XRG5xp7OKWPPYfJT6metI+IORkR5G8F900+g==" crossorigin="anonymous"></script>
+<script src="js/scroll-polyfill.js"></script>
+<script src="js/scroll.js"></script>
+<script src="/assets/js/function.js"></script>
+</body>
+</html>
