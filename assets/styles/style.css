@@ -1,153 +1,52 @@
 @charset "UTF-8";
-.button__link {
+.btn {
   position: relative;
-  font-weight: 700;
-  line-height: 1.4;
+  overflow: hidden;
+  /*ボタンの形状*/
+  text-decoration: none;
   display: inline-block;
-  width: 180px;
-  padding: 20px 0;
-  -webkit-transition: .3s;
-  transition: .3s;
+  border: 1px solid #fff;
+  /* ボーダーの色と太さ */
+  padding: 10px 30px;
   text-align: center;
-  text-decoration: none;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-  color: #fff;
-  border-radius: 10px;
-  background-color: #60D8D6;
-  background-size: 200% auto;
-  font-size: 14px;
-}
-
-.button__link::after {
-  position: absolute;
-  top: 50%;
-  right: 1.5em;
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  content: "\f0da";
-  -webkit-transition: .3s;
-  transition: .3s;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-  font-size: 14px;
-}
-
-.button__link:hover {
-  color: #e07c18;
-  background-color: #fff;
-  border: 1px solid #e07c18;
-  -webkit-box-shadow: 5px 5px 10px #323232;
-          box-shadow: 5px 5px 10px #323232;
-}
-
-.button__link:hover::before {
-  -webkit-transform: none;
-          transform: none;
-}
-
-.button__link:hover::after {
-  right: 1.5em;
-}
-
-.button__link-white {
-  color: #228b22;
-  border: 1px solid;
-  background-color: #fff;
-}
-
-.button__link-white:hover {
-  color: #fff;
-  background-color: #228b22;
-  border: none;
-}
-
-.arrow__link {
-  position: relative;
-  display: inline-block;
-  font-size: 1.6rem;
-  padding: 0 20px;
-  text-decoration: none;
-  color: #fff;
   outline: none;
+  /*アニメーションの指定*/
+  -webkit-transition: ease .2s;
+  transition: ease .2s;
 }
 
-.arrow__link::before {
-  position: absolute;
-  content: "";
-  bottom: -8px;
-  left: 15%;
-  width: 85%;
-  height: 1px;
-  background: #fff;
-  -webkit-transition: all .3s;
-  transition: all .3s;
-}
-
-.arrow__link::after {
-  position: absolute;
-  content: "";
-  bottom: -3px;
-  right: 0;
-  width: 15px;
-  height: 1px;
-  background: #fff;
-  -webkit-transform: rotate(35deg);
-          transform: rotate(35deg);
-  -webkit-transition: all .3s;
-  transition: all .3s;
-}
-
-.arrow__link:hover::before {
-  left: 20%;
-}
-
-.arrow__link:hover::after {
-  right: -5%;
-}
-
-.arrowBack__link {
+.btn > span {
   position: relative;
-  display: inline-block;
-  font-size: 1.6rem;
-  padding: 0 20px;
-  text-decoration: none;
+  z-index: 3;
+  /*z-indexの数値をあげて文字を背景よりも手前に表示*/
   color: #fff;
-  outline: none;
 }
 
-.arrowBack__link::before {
+.bgleft::before {
+  content: '';
   position: absolute;
-  content: "";
-  bottom: -8px;
-  right: 15%;
-  width: 85%;
-  height: 1px;
-  background: #fff;
-  -webkit-transition: all .3s;
-  transition: all .3s;
-}
-
-.arrowBack__link::after {
-  position: absolute;
-  content: "";
-  bottom: -3px;
+  top: 0;
   left: 0;
-  width: 15px;
-  height: 1px;
-  background: #fff;
-  -webkit-transform: rotate(-35deg);
-          transform: rotate(-35deg);
-  -webkit-transition: all .3s;
-  transition: all .3s;
+  z-index: 2;
+  background: #333;
+  /*背景色*/
+  width: 100%;
+  height: 100%;
+  -webkit-transition: -webkit-transform 0.6s cubic-bezier(0.8, 0, 0.2, 1) 0s;
+  transition: -webkit-transform 0.6s cubic-bezier(0.8, 0, 0.2, 1) 0s;
+  transition: transform 0.6s cubic-bezier(0.8, 0, 0.2, 1) 0s;
+  transition: transform 0.6s cubic-bezier(0.8, 0, 0.2, 1) 0s, -webkit-transform 0.6s cubic-bezier(0.8, 0, 0.2, 1) 0s;
+  -webkit-transform: scale(0, 1);
+          transform: scale(0, 1);
+  -webkit-transform-origin: right top;
+          transform-origin: right top;
 }
 
-.arrowBack__link:hover::before {
-  right: 20%;
-}
-
-.arrowBack__link:hover::after {
-  left: -5%;
+.bgleft:hover::before {
+  -webkit-transform-origin: left top;
+          transform-origin: left top;
+  -webkit-transform: scale(1, 1);
+          transform: scale(1, 1);
 }
 
 .btnlinestretches3 {
@@ -326,7 +225,7 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: #eb6100;
+  background-color: #504237;
   /*伸びる背景色の設定*/
 }
 
@@ -590,70 +489,6 @@ body.appear .container {
   }
 }
 
-.scrollDown {
-  position: absolute;
-  right: 50px;
-  bottom: 50px;
-  height: 50px;
-}
-
-/* Scrollテキストの描写 */
-.scrollDown span {
-  position: absolute;
-  left: -15px;
-  top: -15px;
-  color: #eee;
-  font-size: 0.7rem;
-  letter-spacing: 0.05em;
-}
-
-/* 線の描写 */
-.scrollDown::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  width: 1px;
-  height: 30px;
-  background: #eee;
-  -webkit-animation: pathmove 1.4s ease-in-out infinite;
-          animation: pathmove 1.4s ease-in-out infinite;
-  opacity: 0;
-}
-
-/* 線が上から下に動くアニメーション */
-@-webkit-keyframes pathmove {
-  0% {
-    height: 0;
-    top: 0;
-    opacity: 0;
-  }
-  30% {
-    height: 30px;
-    opacity: 1;
-  }
-  100% {
-    height: 0;
-    top: 50px;
-    opacity: 0;
-  }
-}
-@keyframes pathmove {
-  0% {
-    height: 0;
-    top: 0;
-    opacity: 0;
-  }
-  30% {
-    height: 30px;
-    opacity: 1;
-  }
-  100% {
-    height: 0;
-    top: 50px;
-    opacity: 0;
-  }
-}
-
 #g-nav {
   /*position:fixed;にし、z-indexの数値を大きくして前面へ*/
   position: fixed;
@@ -765,7 +600,17 @@ body {
 }
 
 h1 {
-  margin: 0;
+  font-size: 1.5rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 999;
+  letter-spacing: 0.1em;
+  width: 10em;
+  opacity: 0;
+  /*ローディング画面では透過*/
 }
 
 h2 {
@@ -799,151 +644,297 @@ figure {
 /*------------------------------
 	8.0 共通設定
 ------------------------------*/
-/*全体のエリア設定*/
+/*------------------------------
+	8.X Typing
+------------------------------*/
+.TextTyping > span {
+  display: none;
+}
+
+.TextTyping::after {
+  content: "|";
+  -webkit-animation: typinganime .8s ease infinite;
+          animation: typinganime .8s ease infinite;
+  font-weight: normal;
+  padding: 0 0 0 10px;
+}
+
+@-webkit-keyframes typinganime {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes typinganime {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/*------------------------------
+	8.1 header
+------------------------------*/
+.header {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+/*------------------------------
+	8.X move__section分割エリア
+------------------------------*/
 .ms-section {
   color: #fff;
-  padding: 20px;
+  padding: 0;
 }
 
-.ms-section a {
+.ms-section > a {
   color: #fff;
 }
 
-/*右にある丸ナビゲーション色*/
-#multiscroll-nav span {
+/*------------------------------
+	8.X scroll_nav
+------------------------------*/
+#multiscroll-nav > span {
   background: transparent !important;
   border-color: #fff !important;
 }
 
-/*右にある丸のナビゲーション現在地色*/
-#multiscroll-nav li .active span {
+#multiscroll-nav > li .active span {
   background: #fff !important;
 }
 
 /*左上のナビゲーション*/
-#menu li {
-  display: inline-block;
+/*------------------------------
+	8.X menu
+------------------------------*/
+.menu {
+  display: none;
 }
 
-#menu li a {
-  display: inline-block;
-  text-decoration: none;
-  color: #fff;
-  padding: 20px;
+/*天地中央になっている見せ方を上ぞろえに上書き*/
+.ms-tableCell {
+  vertical-align: top !important;
 }
 
-/*左エリア画像設定*/
+/*左上ナビゲーションと左エリア非表示*/
+/*------------------------------
+	8.X moveLeft
+------------------------------*/
+.ms-right {
+  display: none;
+}
+
+/*------------------------------
+	8.X moveLeft
+------------------------------*/
+/*右エリアを横幅100%にして画像＋テキストを出す設定*/
+.ms-left {
+  width: 100% !important;
+}
+
+/*右エリア上部画像設定*/
 #left1 {
-  background: url("../img/main-left.jpg") no-repeat center right;
+  background: url("/assets/images/main-right.jpg") center;
   background-size: cover;
 }
 
-#right1 {
-  background: url("../img/main-right.jpg") no-repeat center left;
+#left2 .sp__top {
+  background: url("/assets/images/fashion-001.jpg") no-repeat center top;
+  background-size: cover;
+  height: 50vh;
+}
+
+#left3 .sp__top {
+  background: url("/assets/images/fashion-002.jpg") no-repeat top center;
+  background-size: cover;
+  height: 50vh;
+}
+
+#left4 .sp__top {
+  background: url("/assets/images/fashion-003.jpg") no-repeat top center;
+  background-size: cover;
+  height: 50vh;
+}
+
+#left4 .sp__bottom {
+  background: url("/assets/images/fashion-004.jpg") no-repeat top center;
+  background-size: cover;
+  height: 50vh;
+}
+
+#left5 .sp-top {
+  background: url("/assets/images/fashion-005.jpg") no-repeat top center;
+  background-size: cover;
+  height: 50vh;
+}
+
+#left5 .sp-bottom {
+  background: url("/assets/images/fashion-006.jpg") no-repeat center;
+  background-size: cover;
+  height: 50vh;
+}
+
+#left6 {
+  background: url("/assets/images/fashion-001.jpg") no-repeat center;
   background-size: cover;
 }
 
-#right2 {
-  background: url("../img/01.jpg") no-repeat center;
-  background-size: cover;
+/*------------------------------
+	8.X .sp-bottom
+------------------------------*/
+/*右エリア下部テキスト余白設定*/
+.sp__bottom {
+  padding: 20px;
+  text-align: center;
 }
 
-#right3 {
-  background: url("../img/02.jpg") no-repeat center;
-  background-size: cover;
-}
+@media (min-width: 600px) {
+  /*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+1.0  Reset
+2.0  Document
+3.0  Layout
+4.0  Structure
+5.0  Contents
+6.0  Elements
+7.0  Widgets
+8.0  Sections
+9.0  External Plugins
 
-#right4 {
-  background: url("../img/03.jpg") no-repeat center;
-  background-size: cover;
-}
-
-#left4 {
-  background: url("../img/04.jpg") no-repeat center;
-  background-size: cover;
-}
-
-#right5 {
-  background: url("../img/05.jpg") no-repeat center;
-  background-size: cover;
-}
-
-#left5 {
-  background: url("../img/06.jpg") no-repeat center;
-  background-size: cover;
-}
-
-#right6 {
-  background: url("../img/07.jpg") no-repeat center;
-  background-size: cover;
-}
-
-/*＝＝＝＝＝＝＝＝＝＝＝550px以下の見え方＝＝＝＝＝＝＝＝＝＝＝＝＝*/
-@media screen and (max-width: 550px) {
-  #header {
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+--------------------------------------------------------------*/
+  /*--------------------------------------------------------------
+8.0 Sections
+--------------------------------------------------------------*/
+  h1 {
+    font-size: 2rem;
   }
-  /*全体のボックスについている余白をリセット*/
-  .ms-section {
-    padding: 0;
-  }
-  /*天地中央になっている見せ方を上ぞろえに上書き*/
-  .ms-tableCell {
-    vertical-align: top;
-  }
-  /*左上ナビゲーションと左エリア非表示*/
-  #menu,
-  .ms-right {
-    display: none;
-  }
-  /*右エリアを横幅100%にして画像＋テキストを出す設定*/
-  .ms-left {
-    width: 100% !important;
-  }
-  /*右エリア上部画像設定*/
+  /* 画像の設定 */
   #left1 {
-    background: url("/assets/images/main-right.jpg") center;
+    background: url("/assets/images/main-left.jpg") no-repeat center right;
     background-size: cover;
   }
-  #left2 .sp__top {
+  #right1 {
+    background: url("/assets/images/main-right.jpg") no-repeat center left;
+    background-size: cover;
+  }
+  #right2 {
     background: url("/assets/images/fashion-001.jpg") no-repeat center;
     background-size: cover;
-    height: 50vh;
   }
-  #left3 .sp__top {
-    background: url("/assets/images/fashion-002.jpg") no-repeat top center;
+  #right3 {
+    background: url("/assets/images/fashion-002.jpg") no-repeat center;
     background-size: cover;
-    height: 50vh;
   }
-  #left4 .sp__top {
-    background: url("/assets/images/fashion-003.jpg") no-repeat top center;
+  #right4 {
+    background: url("/assets/images/fashion-003.jpg") no-repeat center;
     background-size: cover;
-    height: 50vh;
   }
-  #left4 .sp__bottom {
-    background: url("/assets/images/fashion-004.jpg") no-repeat top center;
+  #left4 {
+    background: url("/assets/images/fashion-004.jpg") no-repeat center;
     background-size: cover;
-    height: 50vh;
   }
-  #left5 .sp-top {
-    background: url("/assets/images/fashion-005.jpg") no-repeat top center;
+  #right5 {
+    background: url("/assets/images/fashion-005.jpg") no-repeat center;
     background-size: cover;
-    height: 50vh;
   }
-  #left5 .sp-bottom {
+  #left5 {
     background: url("/assets/images/fashion-006.jpg") no-repeat center;
     background-size: cover;
-    height: 50vh;
+    height: 100vh;
   }
-  #left6 {
-    background: url("/assets/images/fashion-001.jpg") no-repeat center;
+  #right6 {
+    background: url("/assets/images/07.jpg") no-repeat center;
     background-size: cover;
   }
-  /*右エリア下部テキスト余白設定*/
-  .sp-bottom {
+  .sp__top {
+    display: none;
+  }
+  /*------------------------------
+	8.X move__section分割エリア
+------------------------------*/
+  /*全体のエリア設定*/
+  /*各sectionの詳細*/
+  .ms-section {
     padding: 20px;
+  }
+  /*------------------------------
+	8.X menu
+------------------------------*/
+  .menu > li {
+    display: inline-block;
+  }
+  .menu > li > a {
+    display: inline-block;
+    color: #fff;
+    padding: 20px;
+  }
+  /*------------------------------
+	8.X scrollDown
+------------------------------*/
+  .scrolldown {
+    position: absolute;
+    right: 50px;
+    bottom: 50px;
+    height: 50px;
+  }
+  .scrolldown > span {
+    position: absolute;
+    left: -15px;
+    top: -15px;
+    color: #eee;
+    font-size: .8rem;
+    letter-spacing: .05em;
+  }
+  .scrolldown::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 1px;
+    height: 30px;
+    background: #eee;
+    -webkit-animation: pathmove 1.4s ease-in-out infinite;
+            animation: pathmove 1.4s ease-in-out infinite;
+    opacity: 0;
+  }
+  @-webkit-keyframes pathmove {
+    0% {
+      height: 0;
+      top: 0;
+      opacity: 0;
+    }
+    30% {
+      height: 30px;
+      opacity: 1;
+    }
+    100% {
+      height: 0;
+      top: 50px;
+      opacity: 0;
+    }
+  }
+  @keyframes pathmove {
+    0% {
+      height: 0;
+      top: 0;
+      opacity: 0;
+    }
+    30% {
+      height: 30px;
+      opacity: 1;
+    }
+    100% {
+      height: 0;
+      top: 50px;
+      opacity: 0;
+    }
   }
 }
 /*# sourceMappingURL=style.css.map */

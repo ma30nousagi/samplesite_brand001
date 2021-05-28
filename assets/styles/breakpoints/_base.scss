@@ -38,8 +38,16 @@ body {
     letter-spacing: 2px;
     -webkit-text-size-adjust: none; 
 }
-h1 {
-    margin: 0;
+h1{
+    font-size: 1.5rem;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    z-index: 999;
+    letter-spacing: 0.1em;
+    width:10em;
+    opacity: 0;/*ローディング画面では透過*/
 }
 h2 {
     font-family: 'Roboto', sans-serif;
@@ -69,118 +77,89 @@ figure {
 	8.0 共通設定
 ------------------------------*/
 
+/*------------------------------
+	8.X Typing
+------------------------------*/
+.TextTyping {
+    & >span {
+        display: none;
+    }
+    &::after {
+        content: "|";
+	    animation: typinganime .8s ease infinite;
+        font-weight: normal;
+        padding: 0 0 0 10px;
+    }
 
-
-
-
-
-/*全体のエリア設定*/
-
-.ms-section{
-	color:#fff;
-	padding:20px;
+}
+@keyframes typinganime{
+	from{opacity:0}
+	to{opacity:1}
 }
 
-.ms-section a{
-	color:#fff;
-}
-
-/*右にある丸ナビゲーション色*/
-
-#multiscroll-nav span{
-	background:transparent!important;
-	border-color:#fff!important;
-}
-
-/*右にある丸のナビゲーション現在地色*/
-
-#multiscroll-nav li .active span{
-	background:#fff!important;
-}
-
-/*左上のナビゲーション*/
-
-#menu li {
-	display:inline-block;
-}
-
-#menu li a{
-	display:inline-block;
-	text-decoration:none;
-	color: #fff;
-	padding:20px;
-}
-
-/*左エリア画像設定*/
-#left1{
-	background:url("../img/main-left.jpg") no-repeat center right;
-	background-size:cover;
-}
-
-#right1{
-	background:url("../img/main-right.jpg") no-repeat center left;
-	background-size:cover;
-}
-
-#right2{
-	background:url("../img/01.jpg") no-repeat center;
-	background-size:cover;
-}
-
-#right3{
-	background:url("../img/02.jpg") no-repeat center;
-	background-size:cover;
-}
-
-#right4{
-	background:url("../img/03.jpg") no-repeat center;
-	background-size:cover;
-}
-
-#left4{
-	background:url("../img/04.jpg") no-repeat center;
-	background-size:cover;
-}
-
-#right5{
-	background:url("../img/05.jpg") no-repeat center;
-	background-size:cover;
-}
-
-#left5{
-	background:url("../img/06.jpg") no-repeat center;
-	background-size:cover;
-}
-
-#right6{
-	background:url("../img/07.jpg") no-repeat center;
-	background-size:cover;
-}
-
-/*＝＝＝＝＝＝＝＝＝＝＝550px以下の見え方＝＝＝＝＝＝＝＝＝＝＝＝＝*/
-
-@media screen and (max-width:550px){
-	
-#header{
+/*------------------------------
+	8.1 header
+------------------------------*/
+.header{
 	justify-content: center;
 }
 
-/*全体のボックスについている余白をリセット*/
-.ms-section{
+
+
+/*------------------------------
+	8.X move__section分割エリア
+------------------------------*/
+.ms-section {
+    color:#fff;
 	padding:0;
+    & >a {
+        color: #fff;
+    }
 }
+
+/*------------------------------
+	8.X scroll_nav
+------------------------------*/
+#multiscroll-nav {
+    & >span {
+        background:transparent!important;
+	    border-color:#fff!important;
+    }
+    & >li {
+        & .active span {
+            background:#fff!important;
+        }
+    }
+}
+
+
+/*左上のナビゲーション*/
+/*------------------------------
+	8.X menu
+------------------------------*/
+.menu {
+    display: none;
+}
+
+
+
 
 /*天地中央になっている見せ方を上ぞろえに上書き*/
 .ms-tableCell{
-	vertical-align:top;
+	vertical-align:top!important;
 }
-
 /*左上ナビゲーションと左エリア非表示*/
-#menu,
+/*------------------------------
+	8.X moveLeft
+------------------------------*/
 .ms-right{
 	display: none;
 }
 
+
+/*------------------------------
+	8.X moveLeft
+------------------------------*/
 /*右エリアを横幅100%にして画像＋テキストを出す設定*/
 .ms-left{
 	width:100%!important;
@@ -194,7 +173,7 @@ figure {
 }
 
 #left2 .sp__top{
-	background:url("/assets/images/fashion-001.jpg") no-repeat center;
+	background:url("/assets/images/fashion-001.jpg") no-repeat center top;
 	background-size:cover;
     height: 50vh;
 }
@@ -234,9 +213,13 @@ figure {
 	background-size:cover;
 }
 
+
+
+/*------------------------------
+	8.X .sp-bottom
+------------------------------*/
 /*右エリア下部テキスト余白設定*/
-.sp-bottom{
+.sp__bottom{
 	padding:20px;
-}
-	
+    text-align: center;
 }

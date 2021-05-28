@@ -22,6 +22,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600;700&family=Noto+Sans+JP&family=Varela+Round&family=Yusei+Magic&display=swap" rel="stylesheet" />
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+<!-- multiScroll -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/multiscroll.js/0.2.2/jquery.multiscroll.min.css" integrity="sha512-IwtqWeTmYKNClHTbx4VR0476JlMDqGgsq/9QHEu2Fd4sHgK4tlNWJx893Lq6Jh3R36pfMy21mKJe9DFcSoDz0w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <!-- swiper css -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.5.4/swiper-bundle.min.css" integrity="sha512-Uny/q0WcgHTmPEwEnudIstSn9ITJ5A4M69WwQ8kii9QmCKfIgwLZQjEo7W0O4yZpamS29cJP0LGrPqFBEzINIw==" crossorigin="anonymous" />
@@ -31,7 +32,7 @@
 
 <body>
 <div id="splash">
-<div id="splash-logo"><div class="bgextend bgLRextend"><span class="bgappear"><img src="assets/images/logo/socketwebnet_logo.png" alt="socketwebのロゴ"></span></div></div>
+<div id="splash-logo"><div class="bgextend bgLRextend"><span class="bgappear"><img src="assets/images/logo/socket_logo.png" alt="socketwebのロゴ"></span></div></div>
 <!--/splash--></div>
 <div class="splashbg"></div><!---画面遷移用-->
 
@@ -39,95 +40,76 @@
 <header class="header">
     <nav>
         <ul class="menu">
-            <li><a href="">Top</a></li>
-            <li><a href="">About</a></li>
-            <li><a href="">Products</a></li>
-            <li><a href="">Company</a></li>
-            <li><a href="">News</a></li>
+            <li data-menuanchor="area1"><a href="#area1">Top</a></li>
+		    <li data-menuanchor="area6"><a href="#area6">Contact</a></li>
         </ul>
     </nav>
 </header>
 
-<div id="particles-js"></div>
-<div class="wrapper">
+<div class="wrapper" id="wrapper">
 
-    <div class="moveLeft">
-        <div class="move__section" id="left1">
+    <div class="ms-left">
+        <div class="ms-section" id="left1">
             <h1 class="TextTyping">Augmented Reality 2022</h1>
             <div class="particle" id="part1"></div>
         </div>
-        <section class="move__section" id="left2">
+        <section class="ms-section" id="left2">
             <div class="sp__top"></div>
             <div class="sp__bottom">
-                <h2 class="sp__title">WOMAN</h2>
-                <a href="" class="btn bgleft"><span>Collection</span></a>
+                <h2 class="sp__title">Women's Collection</h2>
+                <a href="#" class="btn bgleft"><span>Collection</span></a>
             </div>
         </section>
-        <section class="move__section" id="left3">
+        <section class="ms-section" id="left3">
             <div class="sp__top"></div>
             <div class="sp__bottom">
-                <h2 class="sp__title">MEN</h2>
-                <a href="" class="btn bgleft"><span>Collection</span></a>
+                <h2 class="sp__title">Men's Collection</h2>
+                <a href="#" class="btn bgleft"><span>Collection</span></a>
             </div>
         </section>
-        <section class="move__section" id="left4">
-            <div class="sp__top"></div>
-            <div class="sp__bottom">
-                <h2 class="sp__title">KIDS</h2>
-                <a href="" class="btn bgleft"><span>Collection</span></a>
-            </div>
-        </section>
-        <div class="move__section" id="left5">
+
+        <div class="ms-section" id="left4">
             <div class="sp__top"></div>
             <div class="sp__bottom"></div>
-        <div class="particle" id="pt3"></div>
+        <!-- <div class="particle" id="part3"></div> -->
         </div>
-        <div class="move__section" id="left6">
+        <div class="ms-section" id="left5">
             <div class="sp__top"></div>
             <div class="sp__bottom"></div>
-        <div class="particle" id="pt5"></div>
+        <!-- <div class="particle" id="part5"></div> -->
         </div>
-        <section class="move__section" id="left7">
+
+        <section class="ms-section" id="left6">
             <div class="sp__bottom">
                 <h2>About</h2>
                 <p>NAPについて</p>
             </div>
         </section>
-        <section class="move_section" id="left8">
-            <div class="sp__bottom">
-                <h2>Products</h2>
-                <p>製品情報</p>
-            </div>
-        </section>
-        <section class="move__section" id="left8">
-            <div class="sp__bottom">
-                <h2>Company</h2>
-                <p>会社情報</p>
-            </div>
-        </section>
-    </div><!-- /.moveLeft -->
 
-    <div class="moveRight">
+    </div><!-- /.ms-left -->
 
-        <div class="move__section" id="right1">
+    <div class="ms-right">
+
+        <div class="ms-section" id="right1">
             <div class="scrolldown">
                 <span>Scroll</span>
             </div>
-            <div class="particle" id="pt2"></div>
-        </div>
+            <div class="particle" id="part2"></div>
+        </div><!-- /.right1 -->
 
-        <div class="move__section" id="right2"></div>
+        <div class="ms-section" id="right2">
+        </div><!-- /.right2 -->
 
-        <div class="move__section" id="right3"></div>
+        <div class="ms-section" id="right3"></div>
 
-        <div class="move__section" id="right4"></div>
+        <div class="ms-section" id="right4"></div>
         <div class="particle" id="pt4"></div>
 
-        <div class="move__section" id="right5"></div>
+        <div class="ms-section" id="right5"></div>
         <div class="particle" id="pt6"></div>
 
-        <div class="move__section" id="right6"></div>
-    </div><!-- /.moveRight -->
+        <div class="ms-section" id="right6"></div>
+    </div><!-- /.ms-right -->
 </div><!-- /.wrapper -->
 
 <footer class="footer">
@@ -141,9 +123,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.5.4/swiper-bundle.min.js" integrity="sha512-hQQhpacNvYwkN+PyMQghLPCql/6OQfWNKVUkpW0KgCB5XjqtIkxm8UYny+gTjvIfvE/CrqrKEUOLotbHBFs/0Q==" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/multiscroll.js/0.2.2/jquery.multiscroll.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-
-<script src="js/scroll-polyfill.js"></script>
-<script src="js/scroll.js"></script>
 <script src="/assets/js/function.js"></script>
 </body>
 </html>

@@ -1,0 +1,146 @@
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+1.0  Reset
+2.0  Document
+3.0  Layout
+4.0  Structure
+5.0  Contents
+6.0  Elements
+7.0  Widgets
+8.0  Sections
+9.0  External Plugins
+
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+8.0 Sections
+--------------------------------------------------------------*/
+h1 {
+    font-size: 2rem;
+}
+
+
+/* 画像の設定 */
+#left1{
+	background:url("/assets/images/main-left.jpg") no-repeat center right;
+	background-size:cover;
+}
+
+#right1{
+	background:url("/assets/images/main-right.jpg") no-repeat center left;
+	background-size:cover;
+}
+
+#right2{
+	background:url("/assets/images/fashion-001.jpg") no-repeat center;
+	background-size:cover;
+}
+
+#right3{
+	background:url("/assets/images/fashion-002.jpg") no-repeat center;
+	background-size:cover;
+}
+
+#right4{
+	background:url("/assets/images/fashion-003.jpg") no-repeat center;
+	background-size:cover;
+}
+
+#left4{
+	background:url("/assets/images/fashion-004.jpg") no-repeat center;
+	background-size:cover;
+}
+
+#right5{
+	background:url("/assets/images/fashion-005.jpg") no-repeat center;
+	background-size:cover;
+}
+
+#left5{
+	background:url("/assets/images/fashion-006.jpg") no-repeat center;
+	background-size:cover;
+    height: 100vh;
+}
+
+#right6{
+	background:url("/assets/images/07.jpg") no-repeat center;
+	background-size:cover;
+}
+.sp__top {
+    display: none;
+}
+// .sp__bottom {
+//     height: 100vh;
+// }
+
+
+/*------------------------------
+	8.X move__section分割エリア
+------------------------------*/
+
+/*全体のエリア設定*/
+/*各sectionの詳細*/
+.ms-section{
+	padding:20px;
+}
+
+
+/*------------------------------
+	8.X menu
+------------------------------*/
+.menu {
+    & >li {
+        display: inline-block;
+        & >a {
+            display:inline-block;
+	        color: #fff;
+	        padding:20px;
+        }
+    }
+}
+
+
+/*------------------------------
+	8.X scrollDown
+------------------------------*/
+.scrolldown {
+    position: absolute;
+    right: 50px;
+    bottom: 50px;
+    height: 50px;
+    & >span {
+        position: absolute;
+        left: -15px;
+        top: -15px;
+        color: #eee;
+        font-size: .8rem;
+        letter-spacing: .05em;
+    }
+    &::after {
+        content: "";
+	    position: absolute;
+	    top: 0;
+	    width: 1px;
+	    height: 30px;
+	    background: #eee;
+	    animation: pathmove 1.4s ease-in-out infinite;
+	    opacity:0;
+    }
+}
+
+@keyframes pathmove{
+	0%{
+		height:0;
+		top:0;
+		opacity: 0;
+	}
+	30%{
+		height:30px;
+		opacity: 1;
+	}
+	100%{
+		height:0;
+		top:50px;
+		opacity: 0;
+	}
+}

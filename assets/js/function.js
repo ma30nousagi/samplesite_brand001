@@ -15,23 +15,7 @@ $("#g-nav a").click(function () {//ナビゲーションのリンクがクリッ
 
 
 
-/*===========================================================*/
-/*　footer accordion */
-/*===========================================================*/
-$('.c-footer-heading').on('click', function() {//タイトル要素をクリックしたら
-	$('.box').slideUp(500);//クラス名.boxがついたすべてのアコーディオンを閉じる
-    
-	let findElm = $(this).next(".box");//タイトル直後のアコーディオンを行うエリアを取得
-    
-	if($(this).hasClass('close')){//タイトル要素にクラス名closeがあれば
-		$(this).removeClass('close');//クラス名を除去    
-	}else{//それ以外は
-		$('.close').removeClass('close'); //クラス名closeを全て除去した後
-		$(this).addClass('close');//クリックしたタイトルにクラス名closeを付与し
-		$(findElm).slideDown(500);//アコーディオンを開く
-	}
-  
-});
+
 
 
 /*===========================================================*/
@@ -116,69 +100,13 @@ function flipLeft() {
 		});
 }
 
-/*===========================================================*/
-/*ニュースティッカー*/
-/*===========================================================*/
 
-let slider;
-let sliderFlag = false;
-let breakpoint = 768;//768px以下の場合
-  
-function sliderSet() {
-        let windowWidth = window.innerWidth;
-        if (windowWidth >= breakpoint && !sliderFlag) {//768px以上は1行でスライダー表示
-            slider = $('.slider').bxSlider({
-			      mode: 'vertical',//縦スライド指定
-			      controls: false,//前後のコントロールを表示させない。
-			      auto: 'true',//自動的にスライド
-			      pager: false//ページ送り無効化
-		    });
-            sliderFlag = true;
-        } else if (windowWidth < breakpoint && sliderFlag) {
-            slider.destroySlider();//bxSliderのOptionであるdestroySliderを使用してスライダーの動きを除去
-            sliderFlag = false;
-        }
-    }
-
-
-
-
-
-
-
-/*===========================================================*/
-/* 制御 */
-/*===========================================================*/
-//制御splashの後に動かしたい機能
-    $(window).on('load',function(){
-      $("#splash-logo").delay(1200).fadeOut('slow');//ロゴを1.2秒でフェードアウトする記述
-    
-      //=====ここからローディングエリア（splashエリア）を1.5秒でフェードアウトした後に動かしたいJSをまとめる
-      $("#splash").delay(1500).fadeOut('slow',function(){//ローディングエリア（splashエリア）を1.5秒でフェードアウトする記述
-      
-          $('body').addClass('appear');//フェードアウト後bodyにappearクラス付与
-          sliderSet();//ニュースティッカー
-      });
-    });
-
-    //制御スクロールしたら動かしたい機能
-    $(window).scroll(function () {
-      //フェードアップ&flip
-      fadeUp();
-      flipLeft();
-      fadeAnime();
-      PageTopAnime();
-    });
-
-    $('.splashbg').on('animationend', function() {        
-      fadeAnime();
-  }); 
 
   
 /*===========================================================*/
 /* particle.js */
 /*===========================================================*/ 
-  particlesJS("particles-js", {
+  particlesJS("part1", {
 	"particles":{
 	  "number":{
 		"value":346,//この数値を変更すると星の数が増減できる
@@ -250,10 +178,12 @@ function sliderSet() {
   });
 
 
+
+
   $('#wrapper').multiscroll({
 	sectionsColor: ['#0f7fa7', '#504237', '#504237','#504237', '#504237', '#504237'],//セクションごとの背景色設定
 	anchors: ['area1', 'area2', 'area3','area4','area5','area6'],//セクションとリンクするページ内アンカーになる名前
-	menu: '#menu',//上部ナビゲーションのメニュー設定
+	menu: '.menu',//上部ナビゲーションのメニュー設定
 	navigation: true,//右のナビゲーション出現、非表示は false
 	//navigationTooltips:['Area1', 'Area2', 'Area3','Area4','Area5'],//右のナビゲーション現在地時に入るテキスト
 	//loopTop: true,//最初のセクションを上にスクロールして最後のセクションまでスクロールするかどうかを定義します。
@@ -290,3 +220,77 @@ function TextTypingAnime() {
 		}
 	});
 }
+
+
+
+
+/*==================================================
+/*関数をまとめる*/
+/*===================================*/
+
+// 画面をスクロールをしたら動かしたい場合の記述
+$(window).scroll(function () {
+	TextTypingAnime();//印象編 8-10テキストがタイピング風に出現する関数を呼ぶ*/
+});// ここまで画面をスクロールをしたら動かしたい場合の記述
+
+
+// ページが読み込まれたらすぐに動かしたい場合の記述
+$(window).on('load',function(){
+    
+    //機能編 4-1-5 ロゴアウトラインアニメーション
+    $("#splash_logo").delay(3000).fadeOut('slow');//ロゴを3秒（3000ms）待機してからフェードアウト
+
+    
+  
+    //=====ここからローディングエリア（splashエリア）をフェードアウトした後に動かしたいJSをまとめる    
+    $("#splash").delay(3000).fadeOut(800,function(){//ローディング画面を3秒（3000ms）待機してからフェードアウト
+    
+    $('body').addClass('appear');//フェードアウト後bodyにappearクラス付与 
+	
+	let element = $(".TextTyping");
+	element.each(function () {
+		let text = $(this).html();
+		let textbox = "";
+		text.split('').forEach(function (t) {
+			if (t !== " ") {
+				textbox += '<span>' + t + '</span>';
+			} else {
+				textbox += t;
+			}
+		});
+		$(this).html(textbox);
+	});
+	TextTypingAnime();/* アニメーション用の関数を呼ぶ*/
+
+}); //=====ここまでローディングエリア（splashエリア）を0.8秒でフェードアウトした後に動かしたいJSをまとめる
+    
+});// ここまでページが読み込まれたらすぐに動かしたい場合の記述
+
+
+/*===========================================================*/
+/* 制御 */
+/*===========================================================*/
+//制御splashの後に動かしたい機能
+$(window).on('load',function(){
+	$("#splash-logo").delay(1200).fadeOut('slow');//ロゴを1.2秒でフェードアウトする記述
+  
+	//=====ここからローディングエリア（splashエリア）を1.5秒でフェードアウトした後に動かしたいJSをまとめる
+	$("#splash").delay(1500).fadeOut('slow',function(){//ローディングエリア（splashエリア）を1.5秒でフェードアウトする記述
+	
+		$('body').addClass('appear');//フェードアウト後bodyにappearクラス付与
+		sliderSet();//ニュースティッカー
+	});
+  });
+
+  //制御スクロールしたら動かしたい機能
+  $(window).scroll(function () {
+	//フェードアップ&flip
+	fadeUp();
+	flipLeft();
+	fadeAnime();
+	PageTopAnime();
+  });
+
+  $('.splashbg').on('animationend', function() {        
+	fadeAnime();
+}); 
