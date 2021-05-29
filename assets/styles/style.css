@@ -645,6 +645,35 @@ figure {
 	8.0 共通設定
 ------------------------------*/
 /*------------------------------
+	8.X splash_logo
+------------------------------*/
+/* Loading背景画面設定　*/
+#splash {
+  /*fixedで全面に固定*/
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background: #504237;
+  text-align: center;
+  color: #fff;
+}
+
+/* Loading画像中央配置　*/
+#splash_logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+/* Loading アイコンの大きさ設定　*/
+#splash_logo svg {
+  width: 250px;
+}
+
+/*------------------------------
 	8.X Typing
 ------------------------------*/
 .TextTyping > span {
@@ -725,14 +754,14 @@ figure {
 
 /*左上ナビゲーションと左エリア非表示*/
 /*------------------------------
-	8.X moveLeft
+	8.X ms-right
 ------------------------------*/
 .ms-right {
   display: none;
 }
 
 /*------------------------------
-	8.X moveLeft
+	8.X ms-left
 ------------------------------*/
 /*右エリアを横幅100%にして画像＋テキストを出す設定*/
 .ms-left {
@@ -746,7 +775,7 @@ figure {
 }
 
 #left2 .sp__top {
-  background: url("/assets/images/fashion-001.jpg") no-repeat center top;
+  background: url("/assets/images/fashion-004.jpg") no-repeat center top;
   background-size: cover;
   height: 50vh;
 }
@@ -764,7 +793,7 @@ figure {
 }
 
 #left4 .sp__bottom {
-  background: url("/assets/images/fashion-004.jpg") no-repeat top center;
+  background: url("/assets/images/fashion-001.jpg") no-repeat top center;
   background-size: cover;
   height: 50vh;
 }
@@ -782,7 +811,7 @@ figure {
 }
 
 #left6 {
-  background: url("/assets/images/fashion-001.jpg") no-repeat center;
+  background: url("/assets/images/fashion-003.jpg") no-repeat center;
   background-size: cover;
   opacity: 0.85;
 }
@@ -810,6 +839,66 @@ figure {
           transform: translate(-50%, -50%);
 }
 
+/*------------------------------
+	8.X .sp-bottom
+------------------------------*/
+.footer {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+}
+
+.footer > small {
+  color: #fff;
+}
+
+.footer__sns-list {
+  margin: 0 0 50px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.footer__sns-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  list-style: none;
+}
+
+.footer__sns-item:not(:last-child) {
+  margin: 0 15px 0 0;
+}
+
+.footer__sns-link {
+  position: relative;
+  font-size: 2rem;
+  color: #fff;
+}
+
+.footer__sns-link i.fa-twitter:hover {
+  color: #55acee;
+}
+
+.footer__sns-link i.fa-line:hover {
+  color: #00b900;
+}
+
+.footer__sns-link i.fa-youtube:hover {
+  color: red;
+}
+
+.footer__sns-link i.fa-facebook-f:hover {
+  color: #3b5a9a;
+}
+
+.footer__sns-link i.fa-instagram:hover {
+  color: #000;
+}
+
 @media (min-width: 600px) {
   /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
@@ -832,6 +921,14 @@ figure {
     font-size: 2rem;
   }
   /* 画像の設定 */
+  .ms-right {
+    display: block;
+    width: 50% !important;
+  }
+  .ms-left {
+    width: 50% !important;
+  }
+  /* left */
   #left1 {
     background: url("/assets/images/main-left.jpg") no-repeat center right;
     background-size: cover;
@@ -839,27 +936,25 @@ figure {
   #left2 .sp__top {
     display: none;
   }
+  #left2 .sp__bottom {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
   #left3 .sp__top {
     display: none;
   }
-  #right1 {
-    background: url("/assets/images/main-right.jpg") no-repeat center left;
-    background-size: cover;
-  }
-  #right2 {
-    background: url("/assets/images/fashion-001.jpg") no-repeat center;
-    background-size: cover;
-  }
-  #right3 {
-    background: url("/assets/images/fashion-002.jpg") no-repeat center;
-    background-size: cover;
-  }
-  #right4 {
-    background: url("/assets/images/fashion-003.jpg") no-repeat center;
-    background-size: cover;
+  #left3 .sp__bottom {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
   }
   #left4 {
-    background: url("/assets/images/fashion-004.jpg") no-repeat 15% center;
+    background: url("/assets/images/fashion-004.jpg") no-repeat center;
     background-size: cover;
   }
   #left4 .sp__top {
@@ -867,10 +962,6 @@ figure {
   }
   #left4 .sp__bottom {
     display: none;
-  }
-  #right5 {
-    background: url("/assets/images/fashion-005.jpg") no-repeat center;
-    background-size: cover;
   }
   #left5 {
     background: url("/assets/images/fashion-006.jpg") no-repeat center;
@@ -881,6 +972,37 @@ figure {
   }
   #left5 .sp__bottom {
     display: none;
+  }
+  #left6 {
+    background: #504237;
+  }
+  #left6 .sp__bottom {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+  /*  right */
+  #right1 {
+    background: url("/assets/images/main-right.jpg") no-repeat center left;
+    background-size: cover;
+  }
+  #right2 {
+    background: url("/assets/images/fashion-004.jpg") no-repeat center;
+    background-size: cover;
+  }
+  #right3 {
+    background: url("/assets/images/fashion-002.jpg") no-repeat center;
+    background-size: cover;
+  }
+  #right4 {
+    background: url("/assets/images/fashion-003.jpg") no-repeat center;
+    background-size: cover;
+  }
+  #right5 {
+    background: url("/assets/images/fashion-005.jpg") no-repeat center;
+    background-size: cover;
   }
   #right6 {
     background: url("/assets/images/07.jpg") no-repeat center;
@@ -897,16 +1019,18 @@ figure {
   /*------------------------------
 	8.X menu
 ------------------------------*/
-  .menu {
+  #menu {
     display: block;
   }
-  .menu > li {
+  #menu > li {
     display: inline-block;
   }
-  .menu > li > a {
+  #menu > li > a {
     display: inline-block;
     color: #fff;
     padding: 20px;
+    position: relative;
+    z-index: 100;
   }
   /*------------------------------
 	8.X scrollDown
@@ -968,12 +1092,10 @@ figure {
       opacity: 0;
     }
   }
-  .ms-right {
-    display: block;
-    width: 50%;
-  }
-  .ms-left {
-    width: 50%;
+  .footer {
+    bottom: 20px;
+    left: 20px;
+    top: inherit;
   }
 }
 /*# sourceMappingURL=style.css.map */

@@ -78,6 +78,35 @@ figure {
 ------------------------------*/
 
 /*------------------------------
+	8.X splash_logo
+------------------------------*/
+/* Loading背景画面設定　*/
+#splash {
+    /*fixedで全面に固定*/
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background:#504237;
+	text-align:center;
+	color:#fff;
+}
+
+/* Loading画像中央配置　*/
+#splash_logo {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+/* Loading アイコンの大きさ設定　*/
+#splash_logo svg{
+    width:250px;
+}
+
+
+/*------------------------------
 	8.X Typing
 ------------------------------*/
 .TextTyping {
@@ -150,7 +179,7 @@ figure {
 }
 /*左上ナビゲーションと左エリア非表示*/
 /*------------------------------
-	8.X moveLeft
+	8.X ms-right
 ------------------------------*/
 .ms-right{
 	display: none;
@@ -158,11 +187,11 @@ figure {
 
 
 /*------------------------------
-	8.X moveLeft
+	8.X ms-left
 ------------------------------*/
 /*右エリアを横幅100%にして画像＋テキストを出す設定*/
 .ms-left{
-	width:100%!important;
+	width: 100%!important;
 }
 
 /*右エリア上部画像設定*/
@@ -173,7 +202,7 @@ figure {
 }
 
 #left2 .sp__top{
-	background:url("/assets/images/fashion-001.jpg") no-repeat center top;
+	background:url("/assets/images/fashion-004.jpg") no-repeat center top;
 	background-size:cover;
     height: 50vh;
 }
@@ -191,7 +220,7 @@ figure {
 }
     
 #left4 .sp__bottom{
-	background:url("/assets/images/fashion-004.jpg") no-repeat top center;
+	background:url("/assets/images/fashion-001.jpg") no-repeat top center;
 	background-size:cover;
     height: 50vh;
 }
@@ -209,7 +238,7 @@ figure {
 }
 
 #left6{
-	background:url("/assets/images/fashion-001.jpg") no-repeat center;
+	background:url("/assets/images/fashion-003.jpg") no-repeat center;
 	background-size:cover;
     opacity: 0.85;
 }
@@ -235,4 +264,52 @@ figure {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+/*------------------------------
+	8.X .sp-bottom
+------------------------------*/
+.footer {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    & >small {
+        color: #fff;
+    }
+    &__sns {
+        &-list {
+            margin: 0 0 50px 0;
+            display: flex;
+        }
+        &-list {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+        &-item {
+            &:not(:last-child) {
+                margin: 0 15px 0 0;
+            }
+        }
+        &-link {
+            position: relative;
+            font-size: 2rem;
+            color: #fff;
+            & i.fa-twitter:hover {
+                color: #55acee;
+            }
+            & i.fa-line:hover {
+                color: #00b900;
+            }
+            & i.fa-youtube:hover {
+                color: red;
+            }
+            & i.fa-facebook-f:hover {
+                color: #3b5a9a;
+            }
+            & i.fa-instagram:hover {
+                color: #000;
+            }
+        }
+    }
 }

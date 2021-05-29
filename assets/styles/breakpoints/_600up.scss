@@ -21,6 +21,16 @@ h1 {
 
 
 /* 画像の設定 */
+.ms-right {
+	display: block;
+	width: 50%!important;
+}
+.ms-left {
+	width: 50%!important;
+}
+
+
+/* left */
 #left1{
 	background:url("/assets/images/main-left.jpg") no-repeat center right;
 	background-size:cover;
@@ -28,17 +38,61 @@ h1 {
 #left2 .sp__top {
 	display: none;
 }
+#left2 .sp__bottom {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
 #left3 .sp__top {
 	display: none;
 }
+#left3 .sp__bottom {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+#left4{
+	background:url("/assets/images/fashion-004.jpg") no-repeat center;
+	background-size:cover;
+}
 
+#left4 .sp__top {
+	display: none;
+}
+
+#left4 .sp__bottom {
+	display: none;
+}
+#left5{
+	background:url("/assets/images/fashion-006.jpg") no-repeat center;
+	background-size:cover;
+}
+#left5 .sp__top {
+	display: none;
+}
+#left5 .sp__bottom {
+	display: none;
+}
+#left6{
+	background: #504237;
+}
+#left6 .sp__bottom{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+/*  right */
 #right1{
 	background:url("/assets/images/main-right.jpg") no-repeat center left;
 	background-size:cover;
 }
 
 #right2{
-	background:url("/assets/images/fashion-001.jpg") no-repeat center;
+	background:url("/assets/images/fashion-004.jpg") no-repeat center;
 	background-size:cover;
 }
 
@@ -52,43 +106,14 @@ h1 {
 	background-size:cover;
 }
 
-#left4{
-	background:url("/assets/images/fashion-004.jpg") no-repeat 15% center;
-	background-size:cover;
-}
-
-#left4 .sp__top {
-	display: none;
-}
-
-#left4 .sp__bottom {
-	display: none;
-}
-
 #right5{
 	background:url("/assets/images/fashion-005.jpg") no-repeat center;
 	background-size:cover;
 }
-
-#left5{
-	background:url("/assets/images/fashion-006.jpg") no-repeat center;
-	background-size:cover;
-}
-
-#left5 .sp__top {
-	display: none;
-}
-
-#left5 .sp__bottom {
-	display: none;
-}
-
 #right6{
 	background:url("/assets/images/07.jpg") no-repeat center;
 	background-size:cover;
 }
-
-
 
 /*------------------------------
 	8.X move__section分割エリア
@@ -104,7 +129,7 @@ h1 {
 /*------------------------------
 	8.X menu
 ------------------------------*/
-.menu {
+#menu {
 	display: block;
     & >li {
         display: inline-block;
@@ -112,6 +137,8 @@ h1 {
             display:inline-block;
 	        color: #fff;
 	        padding:20px;
+			position: relative;
+			z-index: 100;
         }
     }
 }
@@ -163,10 +190,8 @@ h1 {
 }
 
 
-.ms-right {
-	display: block;
-	width: 50%;
-}
-.ms-left {
-	width: 50%;
+.footer {
+	bottom: 20px;
+	left: 20px;
+	top: inherit;
 }

@@ -118,6 +118,86 @@ function flipLeft() {
 	  "color":{
 		"value":"#ffffff"
 	  },
+	  "image": {
+        "src": "assets/images/snow.png",/*画像を指定*/
+        "width": 120,
+        "height": 120
+      },
+	  "shape":{
+		"type":"circle",//形状はcircleを指定
+		"stroke":{
+		  "width":0
+		},
+		},
+	  "opacity":{
+		"value":1,//シェイプの透明度
+		"random":true,//シェイプの透明度をランダムにする
+		"anim":{
+		  "enable":true,//シェイプの透明度をアニメーションさせる
+		  "speed":3,//シェイプの透明度をアニメーションさせる
+		  "opacity_min":0,//透明度の最小値０
+		  "sync":false//全てを同時にアニメーションさせない
+		}
+	  },
+	  "size":{
+		"value":2,
+		"random":true,
+		"anim":{
+		  "enable":false,
+		  "speed":4,
+		  "size_min":0.3,
+		  "sync":false
+		}
+	  },
+	  "line_linked":{
+		"enable":false,
+	  },
+	  "move":{
+		"enable":true,
+		"speed":120,//この数値を小さくするとゆっくりな動きになる
+	  "direction":"none",//方向指定なし
+	  "random":true,//動きはランダムに
+	  "straight":true,//動きをとどめる
+		"out_mode":"out",
+		"bounce":false,
+		"attract":{
+		  "enable":false,
+		  "rotateX":600,
+		  "rotateY":600
+		}
+	  }
+	},
+	"interactivity":{
+	  "detect_on":"canvas",
+	  "events":{
+		"onhover":{
+		  "enable":false,
+		},
+		"onclick":{
+		  "enable":false,
+		},
+		"resize":true
+	  }
+	},
+	"retina_detect":true
+  });
+  particlesJS("part2", {
+	"particles":{
+	  "number":{
+		"value":346,//この数値を変更すると星の数が増減できる
+		"density":{
+		  "enable":true,
+		  "value_area":800
+		}
+	  },
+	  "color":{
+		"value":"#ffffff"
+	  },
+	  "image": {
+        "src": "assets/images/snow.png",/*画像を指定*/
+        "width": 120,
+        "height": 120
+      },
 	  "shape":{
 		"type":"circle",//形状はcircleを指定
 		"stroke":{
@@ -179,7 +259,6 @@ function flipLeft() {
 
 
 
-
   $('#wrapper').multiscroll({
 	sectionsColor: ['#0f7fa7', '#504237', '#504237','#504237', '#504237', '#504237'],//セクションごとの背景色設定
 	anchors: ['area1', 'area2', 'area3','area4','area5','area6'],//セクションとリンクするページ内アンカーになる名前
@@ -187,7 +266,7 @@ function flipLeft() {
 	navigation: true,//右のナビゲーション出現、非表示は false
 	//navigationTooltips:['Area1', 'Area2', 'Area3','Area4','Area5'],//右のナビゲーション現在地時に入るテキスト
 	//loopTop: true,//最初のセクションを上にスクロールして最後のセクションまでスクロールするかどうかを定義します。
-	loopBottom: true,//最後のセクションを下にスクロールして最初のセクションまでスクロールするかどうかを定義します。
+	loopBottom: false,//最後のセクションを下にスクロールして最初のセクションまでスクロールするかどうかを定義します。
     //※以下は今回のプラグインの組み合わせのみで使用。ページの途中でリロードしてもトップのタイピング出現
     afterLoad: function(anchorLink, index){
 		if(index == 1){
@@ -199,10 +278,10 @@ function flipLeft() {
 // TextTypingというクラス名がついている子要素（span）を表示から非表示にする定義
 function TextTypingAnime() {
 	$('.TextTyping').each(function () {
-		var elemPos = $(this).offset().top - 50;
-		var scroll = $(window).scrollTop();
-		var windowHeight = $(window).height();
-        var thisChild = "";
+		let elemPos = $(this).offset().top - 50;
+		let scroll = $(window).scrollTop();
+		let windowHeight = $(window).height();
+        let thisChild = "";
 		if (scroll >= elemPos - windowHeight) {
 			thisChild = $(this).children(); //spanタグを取得
 			//spanタグの要素の１つ１つ処理を追加
