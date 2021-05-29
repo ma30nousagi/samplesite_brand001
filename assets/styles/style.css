@@ -769,14 +769,14 @@ figure {
   height: 50vh;
 }
 
-#left5 .sp-top {
-  background: url("/assets/images/fashion-005.jpg") no-repeat top center;
+#left5 .sp__top {
+  background: url("/assets/images/fashion-006.jpg") no-repeat top center;
   background-size: cover;
   height: 50vh;
 }
 
-#left5 .sp-bottom {
-  background: url("/assets/images/fashion-006.jpg") no-repeat center;
+#left5 .sp__bottom {
+  background: url("/assets/images/fashion-005.jpg") no-repeat top center;
   background-size: cover;
   height: 50vh;
 }
@@ -784,6 +784,13 @@ figure {
 #left6 {
   background: url("/assets/images/fashion-001.jpg") no-repeat center;
   background-size: cover;
+  opacity: 0.85;
+}
+
+#right5 .sp__top {
+  background: url("/assets/images/fashion-005.jpg") no-repeat center;
+  background-size: cover;
+  height: 50vh;
 }
 
 /*------------------------------
@@ -793,6 +800,14 @@ figure {
 .sp__bottom {
   padding: 20px;
   text-align: center;
+}
+
+#left6 .sp__bottom {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
 @media (min-width: 600px) {
@@ -821,6 +836,12 @@ figure {
     background: url("/assets/images/main-left.jpg") no-repeat center right;
     background-size: cover;
   }
+  #left2 .sp__top {
+    display: none;
+  }
+  #left3 .sp__top {
+    display: none;
+  }
   #right1 {
     background: url("/assets/images/main-right.jpg") no-repeat center left;
     background-size: cover;
@@ -838,8 +859,14 @@ figure {
     background-size: cover;
   }
   #left4 {
-    background: url("/assets/images/fashion-004.jpg") no-repeat center;
+    background: url("/assets/images/fashion-004.jpg") no-repeat 15% center;
     background-size: cover;
+  }
+  #left4 .sp__top {
+    display: none;
+  }
+  #left4 .sp__bottom {
+    display: none;
   }
   #right5 {
     background: url("/assets/images/fashion-005.jpg") no-repeat center;
@@ -848,14 +875,16 @@ figure {
   #left5 {
     background: url("/assets/images/fashion-006.jpg") no-repeat center;
     background-size: cover;
-    height: 100vh;
+  }
+  #left5 .sp__top {
+    display: none;
+  }
+  #left5 .sp__bottom {
+    display: none;
   }
   #right6 {
     background: url("/assets/images/07.jpg") no-repeat center;
     background-size: cover;
-  }
-  .sp__top {
-    display: none;
   }
   /*------------------------------
 	8.X move__section分割エリア
@@ -868,6 +897,9 @@ figure {
   /*------------------------------
 	8.X menu
 ------------------------------*/
+  .menu {
+    display: block;
+  }
   .menu > li {
     display: inline-block;
   }
@@ -935,6 +967,13 @@ figure {
       top: 50px;
       opacity: 0;
     }
+  }
+  .ms-right {
+    display: block;
+    width: 50%;
+  }
+  .ms-left {
+    width: 50%;
   }
 }
 /*# sourceMappingURL=style.css.map */

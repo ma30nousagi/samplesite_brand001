@@ -196,14 +196,14 @@ figure {
     height: 50vh;
 }
 
-#left5 .sp-top{
-	background:url("/assets/images/fashion-005.jpg") no-repeat top center;
+#left5 .sp__top{
+	background:url("/assets/images/fashion-006.jpg") no-repeat top center;
 	background-size:cover;
     height: 50vh;
 }
     
-#left5 .sp-bottom{
-	background:url("/assets/images/fashion-006.jpg") no-repeat center;
+#left5 .sp__bottom{
+	background:url("/assets/images/fashion-005.jpg") no-repeat top center;
 	background-size:cover;
     height: 50vh;
 }
@@ -211,8 +211,14 @@ figure {
 #left6{
 	background:url("/assets/images/fashion-001.jpg") no-repeat center;
 	background-size:cover;
+    opacity: 0.85;
 }
 
+#right5 .sp__top{
+	background:url("/assets/images/fashion-005.jpg") no-repeat center;
+	background-size:cover;
+    height: 50vh;
+}
 
 
 /*------------------------------
@@ -222,4 +228,11 @@ figure {
 .sp__bottom{
 	padding:20px;
     text-align: center;
+}
+
+#left6 .sp__bottom {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }

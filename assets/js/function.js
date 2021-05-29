@@ -183,7 +183,7 @@ function flipLeft() {
   $('#wrapper').multiscroll({
 	sectionsColor: ['#0f7fa7', '#504237', '#504237','#504237', '#504237', '#504237'],//セクションごとの背景色設定
 	anchors: ['area1', 'area2', 'area3','area4','area5','area6'],//セクションとリンクするページ内アンカーになる名前
-	menu: '.menu',//上部ナビゲーションのメニュー設定
+	menu: '#menu',//上部ナビゲーションのメニュー設定
 	navigation: true,//右のナビゲーション出現、非表示は false
 	//navigationTooltips:['Area1', 'Area2', 'Area3','Area4','Area5'],//右のナビゲーション現在地時に入るテキスト
 	//loopTop: true,//最初のセクションを上にスクロールして最後のセクションまでスクロールするかどうかを定義します。
@@ -271,26 +271,3 @@ $(window).on('load',function(){
 /* 制御 */
 /*===========================================================*/
 //制御splashの後に動かしたい機能
-$(window).on('load',function(){
-	$("#splash-logo").delay(1200).fadeOut('slow');//ロゴを1.2秒でフェードアウトする記述
-  
-	//=====ここからローディングエリア（splashエリア）を1.5秒でフェードアウトした後に動かしたいJSをまとめる
-	$("#splash").delay(1500).fadeOut('slow',function(){//ローディングエリア（splashエリア）を1.5秒でフェードアウトする記述
-	
-		$('body').addClass('appear');//フェードアウト後bodyにappearクラス付与
-		sliderSet();//ニュースティッカー
-	});
-  });
-
-  //制御スクロールしたら動かしたい機能
-  $(window).scroll(function () {
-	//フェードアップ&flip
-	fadeUp();
-	flipLeft();
-	fadeAnime();
-	PageTopAnime();
-  });
-
-  $('.splashbg').on('animationend', function() {        
-	fadeAnime();
-}); 

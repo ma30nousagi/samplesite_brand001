@@ -25,6 +25,12 @@ h1 {
 	background:url("/assets/images/main-left.jpg") no-repeat center right;
 	background-size:cover;
 }
+#left2 .sp__top {
+	display: none;
+}
+#left3 .sp__top {
+	display: none;
+}
 
 #right1{
 	background:url("/assets/images/main-right.jpg") no-repeat center left;
@@ -47,8 +53,16 @@ h1 {
 }
 
 #left4{
-	background:url("/assets/images/fashion-004.jpg") no-repeat center;
+	background:url("/assets/images/fashion-004.jpg") no-repeat 15% center;
 	background-size:cover;
+}
+
+#left4 .sp__top {
+	display: none;
+}
+
+#left4 .sp__bottom {
+	display: none;
 }
 
 #right5{
@@ -59,19 +73,21 @@ h1 {
 #left5{
 	background:url("/assets/images/fashion-006.jpg") no-repeat center;
 	background-size:cover;
-    height: 100vh;
+}
+
+#left5 .sp__top {
+	display: none;
+}
+
+#left5 .sp__bottom {
+	display: none;
 }
 
 #right6{
 	background:url("/assets/images/07.jpg") no-repeat center;
 	background-size:cover;
 }
-.sp__top {
-    display: none;
-}
-// .sp__bottom {
-//     height: 100vh;
-// }
+
 
 
 /*------------------------------
@@ -89,6 +105,7 @@ h1 {
 	8.X menu
 ------------------------------*/
 .menu {
+	display: block;
     & >li {
         display: inline-block;
         & >a {
@@ -143,4 +160,13 @@ h1 {
 		top:50px;
 		opacity: 0;
 	}
+}
+
+
+.ms-right {
+	display: block;
+	width: 50%;
+}
+.ms-left {
+	width: 50%;
 }
